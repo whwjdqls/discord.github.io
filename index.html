@@ -332,7 +332,7 @@ Human motion, inherently continuous and dynamic, presents significant challenges
         <h2 class="title is-3">Architecture</h2>
         <img src="static/main.png" style="width: 800px; height: auto; display: block; margin: 0 auto;">
         <p style="margin-top: 10px;">
-An overview of DisCoRD. During the <strong>Inference</strong> stage, we use a pretrained token prediction model based on the pretrained quantizer to first generate tokens from the given control signal. These generated tokens are then projected into continuous features <strong>Ĉ</strong>, concatenated with Gaussian noise <strong>X<sub>0</sub> ~ N(0, I)</strong>, and iteratively decoded through the learned vector field <strong>v<sub>&#x03B8;</sub></strong> into motion <strong>X<sup>&#x0302;</sup><sub>1</sub></strong>.
+An overview of DisCoRD. During the <strong>Training</strong> stage, we leverage a pretrained quantizer to first obtain discrete representations (tokens) of motion. These tokens are then projected into continuous features <b>C</b>, which are concatenated with noisy motion <b>X<sub>t</sub></b>. This concatenated feature is used to train a vector field <b>v</b>. During the <strong>Inference</strong> stage, we use a pretrained token prediction model based on the pretrained quantizer to first generate tokens from the given control signal. These generated tokens are then projected into continuous features <strong>Ĉ</strong>, concatenated with Gaussian noise <strong>X<sub>0</sub> ~ N(0, I)</strong>, and iteratively decoded through the learned vector field <strong>v<sub>&#x03B8;</sub></strong> into motion <strong>X<sup>&#x0302;</sup><sub>1</sub></strong>.
         </p>
       </div>
     </div>
