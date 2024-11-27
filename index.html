@@ -217,7 +217,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="photo-section">
-      <img src="static/teaser_final.png" alt="Description of the image" style="width: 600px; height: auto;">
+      <img src="static/teaser.png" alt="Description of the image" style="width: 600px; height: auto;">
     </div>
   </div>
 </section>
@@ -311,15 +311,30 @@ Human motion, inherently continuous and dynamic, presents significant challenges
       </div>
     </div>
     <!--/ Abstract. -->
+    <!--/ Abstract. -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="photo-section" style="text-align: center;">
+        <h2 class="title is-3">Architecture</h2>
+        <img src="static/intro.png" style="width: 800px; height: auto; display: block; margin: 0 auto;">
+        <p style="margin-top: 10px;">
+         Discrete quantization methods en-
+code multiple motions into a single quantized representation. While existing methods deterministically decode from this quantized representation, DisCoRD iteratively decodes the discrete latent in acontinuous space to recover the inherent continuity and dynamism of motion. To assess the gap between reconstructed and real motion, prior work primarily used FID as the metric. Here, we additionally propose symmetric Jerk Percentage Error (sJPE) to evaluate the differences in naturalness between reconstructed and real motion.
+      </div>
+    </div>
+  </section>
+
+    <!--/ Abstract. -->
 
     <!--/ Abstract. -->
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="photo-section" style="text-align: center;">
         <h2 class="title is-3">Architecture</h2>
-        <img src="static/DEEPTalk_main.png" style="width: 800px; height: auto; display: block; margin: 0 auto;">
+        <img src="static/main.png" style="width: 800px; height: auto; display: block; margin: 0 auto;">
         <p style="margin-top: 10px;">
-          (a) \( E_{\text{audio}} \) and \( E_{\text{exp}} \) are trained to predict mean and variance for a joint audio-facial emotion embedding space, DEE. (b) We train TH-VQVAE with separate codebooks, \( \mathcal{Z}^b \) and \( \mathcal{Z}^t \), for low and high-frequency motions, respectively. (c) DEEPTalk first extracts face features, predicts top and bottom codebook indices, and uses frozen TH-VQVAE decoders to decode the quantized motion features. To ensure emotion alignment between input audio and the predicted facial expressions, we introduce an emotional consistency loss \( L_{\text{emo}} \) by utilizing DEE.
+**An overview of DisCoRD.** During the **Training** stage, we leverage a pretrained quantizer to first obtain discrete representations (tokens) of motion. These tokens are then projected into continuous features **C**, which are concatenated with noisy motion **Xₜ**. This concatenated feature is used to train a vector field **v**. During the **Inference** stage, we use a pretrained token prediction model based on the pretrained quantizer to first generate tokens from the given control signal. These generated tokens are then projected into continuous features **Ĉ**, concatenated with Gaussian noise **X₀ ~ N(0, I)**, and iteratively decoded through the learned vector field **vθ** into motion **X̂₁**.
+
         </p>
       </div>
     </div>
@@ -358,8 +373,8 @@ Human motion, inherently continuous and dynamic, presents significant challenges
     <div class="columns is-centered">
 
 
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
+<!--     Concurrent Work. -->
+<!--     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
 
@@ -379,7 +394,7 @@ Human motion, inherently continuous and dynamic, presents significant challenges
 
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Concurrent Work. -->
 
   </div>
